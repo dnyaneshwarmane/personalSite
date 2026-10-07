@@ -1,0 +1,61 @@
+<article class="page">
+  <header class="page-intro">
+    <p class="index">05 — AI journey</p>
+    <h1>A pair for the new stack. Not a substitute for it.</h1>
+    <p class="lede">
+      I am using AI to learn Electron, Angular, and TypeScript faster. The rule is simple: it may
+      draft and explain. I decide what stays, and I have to be able to read it.
+    </p>
+  </header>
+
+  <div class="split">
+    <div class="prose">
+      <p>
+        Nine years of Qt did not teach me Angular’s compiler. An assistant is good at that gap. It
+        can name the decorator, show the route shape, and point at the page in the docs. It is bad
+        at knowing which part of a private product I am allowed to describe, and it will sound sure
+        when it is wrong.
+      </p>
+      <p>
+        So the practice is narrow. I ask it to explain an error before I ask it to patch one. I
+        keep experiments small enough to finish. I write the notes myself. When the model and the
+        compiler disagree, I trust the compiler and the official docs.
+      </p>
+      <h2>What I am willing to publish</h2>
+      <p>
+        Learning notes, this website, and small public studies. Product source, customer data, and
+        anything that belongs to the company stay off the page and out of the chat.
+      </p>
+      <p>
+        <a routerLink="/blog">Read the notes</a>
+      </p>
+    </div>
+    <aside class="fact-card">
+      <p class="kicker">Rules I keep</p>
+      <ol class="principles">
+        @for (rule of principles; track rule) {
+          <li>{{ rule }}</li>
+        }
+      </ol>
+    </aside>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <p class="index">Experiments</p>
+      <h2>What the learning looks like</h2>
+    </div>
+    <ul class="achieve">
+      @for (item of experiments; track item.title) {
+        <li>
+          <p class="kicker">{{ item.status }}</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+          @if (item.href) {
+            <a [href]="item.href">{{ item.hrefLabel }}</a>
+          }
+        </li>
+      }
+    </ul>
+  </section>
+</article>

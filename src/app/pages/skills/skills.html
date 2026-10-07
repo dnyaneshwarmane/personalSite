@@ -1,0 +1,27 @@
+<article class="page">
+  <header class="page-intro">
+    <p class="index">02 — Skills</p>
+    <h1>What I use, and what I am learning</h1>
+    <p class="lede">
+      The depth is in Qt and C++. The rest of this page is the stack I am moving into, practiced on
+      real pages rather than a list of logos.
+    </p>
+  </header>
+
+  <div class="skill-grid">
+    @for (group of groups; track group.title) {
+      <section class="skill-group">
+        <h2>{{ group.title }}</h2>
+        <p>{{ group.summary }}</p>
+        <ul>
+          @for (item of group.items; track item.name) {
+            <li>
+              <span>{{ item.name }}</span>
+              <small>{{ item.note }}</small>
+            </li>
+          }
+        </ul>
+      </section>
+    }
+  </div>
+</article>

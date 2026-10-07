@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mane.dev/</loc></url>
+  <url><loc>https://mane.dev/about</loc></url>
+  <url><loc>https://mane.dev/skills</loc></url>
+  <url><loc>https://mane.dev/experience</loc></url>
+  <url><loc>https://mane.dev/projects</loc></url>
+  <url><loc>https://mane.dev/projects/desktop-applications</loc></url>
+  <url><loc>https://mane.dev/projects/cpu-usage</loc></url>
+  <url><loc>https://mane.dev/projects/mane-site</loc></url>
+  <url><loc>https://mane.dev/projects/rust-ffi</loc></url>
+  <url><loc>https://mane.dev/ai</loc></url>
+  <url><loc>https://mane.dev/blog</loc></url>
+  <url><loc>https://mane.dev/blog/learning-angular</loc></url>
+  <url><loc>https://mane.dev/blog/desktop-habits</loc></url>
+  <url><loc>https://mane.dev/blog/signals-and-outputs</loc></url>
+  <url><loc>https://mane.dev/resume</loc></url>
+  <url><loc>https://mane.dev/contact</loc></url>
+</urlset>

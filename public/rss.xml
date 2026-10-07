@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Dnyaneshwar Mane — Notes</title>
+    <link>https://mane.dev/blog</link>
+    <description>Technical notes from a Qt and C++ developer learning Electron, Angular, and TypeScript.</description>
+    <item>
+      <title>Learning Angular after years of Qt</title>
+      <link>https://mane.dev/blog/learning-angular</link>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 GMT</pubDate>
+      <description>A way to learn the web stack without pretending nine years of desktop software did not happen.</description>
+    </item>
+    <item>
+      <title>Desktop habits that still matter on the web</title>
+      <link>https://mane.dev/blog/desktop-habits</link>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+      <description>State, ownership, and reading the existing code. The web did not cancel these.</description>
+    </item>
+    <item>
+      <title>Signals, slots, and Angular outputs</title>
+      <link>https://mane.dev/blog/signals-and-outputs</link>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
+      <description>How a Qt connection maps onto an Angular component that tells its parent something happened.</description>
+    </item>
+  </channel>
+</rss>

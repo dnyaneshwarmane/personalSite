@@ -1,0 +1,24 @@
+<article class="page">
+  <header class="page-intro">
+    <p class="index">06 — Blog</p>
+    <h1>Technical notes</h1>
+    <p class="lede">
+      Short pieces from the move out of Qt. Written for another desktop developer who is learning
+      the same stack. Longer experiments also live on
+      <a [href]="profile.hashnode">Hashnode</a>.
+    </p>
+  </header>
+
+  <div class="listing">
+    @for (note of notes; track note.slug) {
+      <a class="row" [routerLink]="['/blog', note.slug]">
+        <span class="row-meta">{{ formatDate(note.date) }}</span>
+        <span>
+          <strong>{{ note.title }}</strong>
+          <small>{{ note.summary }}</small>
+        </span>
+        <span class="row-year">{{ readingMinutes(note.body) }} min</span>
+      </a>
+    }
+  </div>
+</article>

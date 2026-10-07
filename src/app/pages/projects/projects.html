@@ -1,0 +1,28 @@
+<article class="page">
+  <header class="page-intro">
+    <p class="index">04 — Projects</p>
+    <h1>Work I can talk about</h1>
+    <p class="lede">
+      The day job is a product codebase that stays private. These entries are the public side: what
+      I build at work, a small Qt utility, this site, and a study folder.
+    </p>
+  </header>
+
+  <div class="listing">
+    @for (project of projects; track project.slug) {
+      <a class="row" [routerLink]="['/projects', project.slug]">
+        <span class="row-meta">{{ project.kind }}</span>
+        <span>
+          <strong>{{ project.title }}</strong>
+          <small>{{ project.summary }}</small>
+          <span class="tags">
+            @for (tag of project.stack; track tag) {
+              <em>{{ tag }}</em>
+            }
+          </span>
+        </span>
+        <span class="row-year">{{ project.year }}</span>
+      </a>
+    }
+  </div>
+</article>

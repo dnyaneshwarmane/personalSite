@@ -1,0 +1,65 @@
+<article class="page">
+  <header class="page-intro">
+    <p class="index">01 — About</p>
+    <h1>Desktop first. The web is the next room.</h1>
+    <p class="lede">
+      I am {{ profile.name }}, a software developer in {{ profile.location }}. Since
+      {{ profile.workStartLabel }} I have worked at {{ profile.company }}, building desktop
+      applications with Qt and C++.
+    </p>
+  </header>
+
+  <div class="split">
+    <div class="prose">
+      <p>
+        Desktop work teaches a particular kind of patience. The program sits on someone else’s
+        computer. When it fails, you do not get to refresh a website and call it fixed. You learn
+        to read the code, keep state understandable, and change less than you first wanted to.
+      </p>
+      <p>
+        That is the part I am carrying into the web. Electron is the bridge I am using between a
+        native shell and web technology. Angular and TypeScript are where I want the interface work
+        to live: components with a clear job, routing that matches the product, and services that
+        hold the logic several pages share.
+      </p>
+      <p>
+        I am also learning how to use AI while I do this. It is useful for explaining an unfamiliar
+        API and for a first draft. I still read what I keep. Private product code stays out of the
+        prompt.
+      </p>
+      <p>
+        This site is the public notebook for that stretch of the career: the work, the skills, the
+        notes, and a resume you can print.
+      </p>
+      <p class="actions">
+        <a class="button" routerLink="/experience">Experience</a>
+        <a class="button ghost" routerLink="/ai">AI journey</a>
+      </p>
+    </div>
+    <aside class="fact-card">
+      <img class="portrait" [src]="profile.photo" width="512" height="386" [alt]="profile.name" />
+      <dl>
+        <div>
+          <dt>Role</dt>
+          <dd>{{ profile.role }}</dd>
+        </div>
+        <div>
+          <dt>Company</dt>
+          <dd>{{ profile.company }}</dd>
+        </div>
+        <div>
+          <dt>Since</dt>
+          <dd>{{ profile.workStartLabel }}</dd>
+        </div>
+        <div>
+          <dt>Based in</dt>
+          <dd>{{ profile.location }}</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>Qt, C++, Electron, Angular</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</article>

@@ -1,0 +1,56 @@
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="wordmark" routerLink="/" (click)="closeMenu()">mane</a>
+    <button
+      type="button"
+      class="nav-toggle"
+      [attr.aria-expanded]="menuOpen()"
+      [attr.aria-label]="menuOpen() ? 'Close menu' : 'Open menu'"
+      (click)="toggleMenu()"
+    >
+      {{ menuOpen() ? 'Close' : 'Menu' }}
+    </button>
+    <nav class="nav-panel" [class.is-open]="menuOpen()" aria-label="Primary">
+      @for (item of nav; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="is-active"
+          ariaCurrentWhenActive="page"
+          (click)="closeMenu()"
+          >{{ item.label }}</a
+        >
+      }
+    </nav>
+  </div>
+</header>
+
+<main id="content" tabindex="-1">
+  <router-outlet />
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="wordmark">mane</p>
+      <p>{{ profile.name }}</p>
+      <p class="muted">{{ profile.role }} · {{ profile.location }}</p>
+    </div>
+    <div>
+      <p class="kicker">Domain</p>
+      <p>{{ profile.siteUrl.replace('https://', '') }}</p>
+      <p class="muted">Alternate: {{ profile.alternateDomain }}</p>
+    </div>
+    <div>
+      <p class="kicker">Elsewhere</p>
+      <p><a rel="me" href="{{ profile.github }}">GitHub</a></p>
+      <p><a rel="me" href="{{ profile.linkedin }}">LinkedIn</a></p>
+      <p><a rel="me" href="{{ profile.hashnode }}">Hashnode</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>Qt / C++ → Electron → Angular / TypeScript</p>
+    <p>© {{ year }} {{ profile.name }}</p>
+  </div>
+</footer>

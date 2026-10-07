@@ -1,0 +1,77 @@
+<article class="page">
+  <header class="page-intro no-print">
+    <p class="index">07 — Resume</p>
+    <h1>A page you can print</h1>
+    <p class="lede">
+      Use the button, then choose “Save as PDF” in the print dialog. The sheet below is the
+      resume.
+    </p>
+    <button type="button" class="button" (click)="print()">Print / Save as PDF</button>
+  </header>
+
+  <section class="sheet">
+    <header class="sheet-head">
+      <div>
+        <h2>{{ profile.name }}</h2>
+        <p>{{ profile.role }} · {{ profile.location }}</p>
+      </div>
+      <ul>
+        <li><a [href]="profile.phoneLink">{{ profile.phone }}</a></li>
+        <li><a [href]="'mailto:' + profile.email">{{ profile.email }}</a></li>
+        <li><a [href]="profile.github">github.com/dnyaneshwarmane</a></li>
+        <li><a [href]="profile.linkedin">LinkedIn</a></li>
+        <li>{{ profile.siteUrl.replace('https://', '') }}</li>
+      </ul>
+    </header>
+
+    <section>
+      <h3>Summary</h3>
+      <p>
+        Software developer with {{ years }}+ years at {{ profile.company }}, building desktop
+        applications in Qt and C++. Now extending that work through Electron into Angular and
+        TypeScript, and publishing the learning in public.
+      </p>
+    </section>
+
+    <section>
+      <h3>Experience</h3>
+      <div class="sheet-role">
+        <div>
+          <strong>{{ profile.role }}</strong>
+          <span>{{ profile.company }}, {{ profile.location }}</span>
+        </div>
+        <span>{{ profile.workStartLabel }} — Present</span>
+      </div>
+      <ul>
+        <li>Develop desktop application software in Qt and C++ for a remote-assessment product.</li>
+        <li>Maintain UI behavior and application state in a codebase measured in years.</li>
+        <li>Investigate defects that appear on Windows desktops, not only in a debugger session.</li>
+        <li>Study Electron, Angular, and TypeScript as the next interface stack, in public.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Skills</h3>
+      <ul class="sheet-skills">
+        @for (group of skillLines; track group.title) {
+          <li>
+            <strong>{{ group.title }}.</strong>
+            {{ group.names }}
+          </li>
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h3>Selected projects</h3>
+      <ul>
+        @for (project of projects; track project.slug) {
+          <li>
+            <strong>{{ project.title }}.</strong>
+            {{ project.summary }}
+          </li>
+        }
+      </ul>
+    </section>
+  </section>
+</article>

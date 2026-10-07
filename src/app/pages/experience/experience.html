@@ -1,0 +1,62 @@
+<article class="page">
+  <header class="page-intro">
+    <p class="index">03 — Experience</p>
+    <h1>{{ years }}+ years, one product home</h1>
+    <p class="lede">
+      I have been a software developer at {{ profile.company }} in Pune since
+      {{ profile.workStartLabel }}. The through-line is desktop software. The new chapter is the
+      web.
+    </p>
+  </header>
+
+  <section class="role">
+    <div>
+      <p class="kicker">{{ profile.workStartLabel }} — Present</p>
+      <h2>{{ profile.role }}</h2>
+      <p class="company">{{ profile.company }} · {{ profile.location }}</p>
+    </div>
+    <ul>
+      <li>Build and maintain desktop application software in Qt and C++.</li>
+      <li>Work on a product used for remote assessment, on the machine where it runs.</li>
+      <li>Debug behavior that only shows up in a real Windows desktop session.</li>
+      <li>Carry that care into Electron, Angular, and TypeScript.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="index">Chapters</p>
+      <h2>How the work changed</h2>
+    </div>
+    <ol class="timeline">
+      @for (chapter of chapters; track chapter.title) {
+        <li>
+          <p class="when">{{ chapter.label }}</p>
+          <div>
+            <h3>{{ chapter.title }}</h3>
+            <p>{{ chapter.text }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="index">Record</p>
+      <h2>Career notes</h2>
+    </div>
+    <ul class="achieve">
+      @for (item of achievements; track item.title) {
+        <li>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </li>
+      }
+    </ul>
+    <p class="actions">
+      <a class="button" routerLink="/resume">Open resume</a>
+      <a class="button ghost" routerLink="/projects">See projects</a>
+    </p>
+  </section>
+</article>

@@ -1,0 +1,108 @@
+<article class="page home">
+  <header class="hero">
+    <div>
+      <p class="kicker">
+        <span>{{ profile.location }}</span>
+        <span>{{ profile.role }}</span>
+      </p>
+      <h1>{{ profile.givenName }}<br />{{ profile.familyName }}</h1>
+      <p class="lede">
+        {{ years }}+ years of desktop software in Qt and C++. Electron, Angular, and TypeScript are
+        the next room in the same workshop — and I am writing the notes as I go.
+      </p>
+      <div class="actions">
+        <a class="button" routerLink="/projects">View projects</a>
+        <a class="button ghost" routerLink="/contact">Contact</a>
+      </div>
+    </div>
+    <aside class="now-card">
+      <img class="portrait" [src]="profile.photo" width="512" height="386" [alt]="profile.name" />
+      <p class="kicker">Now</p>
+      <p class="now-role">{{ profile.role }}</p>
+      <p>{{ profile.company }}</p>
+      <p class="muted">Since {{ profile.workStartLabel }}</p>
+      <hr />
+      <p class="kicker">Learning</p>
+      <p>Angular, TypeScript, and AI as a careful pair. I still read the code I keep.</p>
+      <p class="domain">{{ profile.siteUrl.replace('https://', '') }}</p>
+    </aside>
+  </header>
+
+  <section class="stats" aria-label="At a glance">
+    <p><strong>{{ years }}+</strong> years with Qt and C++</p>
+    <p><strong>2017</strong> joined {{ profile.company }}</p>
+    <p><strong>Pune</strong> desktop work, web studies</p>
+  </section>
+
+  <section class="band">
+    <div class="section-head">
+      <p class="index">Path</p>
+      <h2>From a native window to the browser</h2>
+    </div>
+    <ol class="path">
+      <li>
+        <span>01</span>
+        <h3>Qt / C++</h3>
+        <p>Native desktop software. Widgets, signals, and code that has to live for years.</p>
+      </li>
+      <li>
+        <span>02</span>
+        <h3>Electron</h3>
+        <p>The bridge. A desktop shell, with web technology inside it.</p>
+      </li>
+      <li>
+        <span>03</span>
+        <h3>Angular</h3>
+        <p>Components, routing, and TypeScript — how I want to build interfaces next.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="index">Selected work</p>
+      <h2>Projects</h2>
+      <a routerLink="/projects">All projects</a>
+    </div>
+    <div class="listing">
+      @for (project of projects; track project.slug) {
+        <a class="row" [routerLink]="['/projects', project.slug]">
+          <span class="row-meta">{{ project.kind }}</span>
+          <span>
+            <strong>{{ project.title }}</strong>
+            <small>{{ project.summary }}</small>
+          </span>
+          <span class="row-year">{{ project.year }}</span>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="index">Latest</p>
+      <h2>Notes</h2>
+      <a routerLink="/blog">All notes</a>
+    </div>
+    <div class="listing">
+      @for (note of notes; track note.slug) {
+        <a class="row" [routerLink]="['/blog', note.slug]">
+          <span class="row-meta">{{ formatDate(note.date) }}</span>
+          <span>
+            <strong>{{ note.title }}</strong>
+            <small>{{ note.summary }}</small>
+          </span>
+          <span class="row-year">{{ readingMinutes(note.body) }} min</span>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section class="cta">
+    <div>
+      <p class="kicker">Contact</p>
+      <h2>For a role, a collaboration, or a technical conversation.</h2>
+    </div>
+    <a class="button" routerLink="/contact">Write to me</a>
+  </section>
+</article>

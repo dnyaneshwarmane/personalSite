@@ -1,0 +1,32 @@
+<article class="page">
+  @if (project(); as item) {
+    <header class="page-intro">
+      <p class="index">
+        <a routerLink="/projects">Projects</a>
+        <span> / {{ item.kind }}</span>
+      </p>
+      <h1>{{ item.title }}</h1>
+      <p class="lede">{{ item.summary }}</p>
+      <p class="tags tags-lg">
+        @for (tag of item.stack; track tag) {
+          <em>{{ tag }}</em>
+        }
+        <em>{{ item.year }}</em>
+      </p>
+    </header>
+    <app-blocks [blocks]="item.body" />
+    <p class="actions">
+      @if (item.href) {
+        <a class="button" [href]="item.href">{{ item.hrefLabel }}</a>
+      }
+      <a class="button ghost" routerLink="/projects">All projects</a>
+    </p>
+  } @else {
+    <header class="page-intro">
+      <p class="index">Projects</p>
+      <h1>That project is not here</h1>
+      <p class="lede">The link may be old. The list is short on purpose.</p>
+      <a class="button" routerLink="/projects">Back to projects</a>
+    </header>
+  }
+</article>

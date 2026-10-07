@@ -1,0 +1,17 @@
+<div class="prose">
+  @for (block of blocks(); track $index) {
+    @if (block.type === 'p') {
+      <p>{{ block.text }}</p>
+    } @else if (block.type === 'h2') {
+      <h2>{{ block.text }}</h2>
+    } @else if (block.type === 'code') {
+      <pre><code [attr.data-lang]="block.lang">{{ block.text }}</code></pre>
+    } @else if (block.type === 'ul') {
+      <ul>
+        @for (item of block.items; track $index) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    }
+  }
+</div>
